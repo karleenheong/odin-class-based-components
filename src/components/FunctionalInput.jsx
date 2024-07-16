@@ -64,14 +64,14 @@ const FunctionalInput = ({ name }) => {
       <h4>{count} tasks to complete</h4>
       <ul>
         {todos.map((todo) => (
-          <div key={todo.id} className='todoDiv'>
+          <div key={todo.id}>
             {todo.isEditing ? (
               <form onSubmit={(e) => handleResubmit(e, todo.id)}>
                 <input type="text" value={inputValEdit} onChange={handleInputValEdit}/>
                 <button type="submit">Resubmit</button>
               </form>
-              ) : (
-              <div>
+            ) : (
+              <div className='todoDiv'>
                 <li key={todo.id}>{todo.task}</li>
                 <button onClick={() => handleEdit(todo)
                 }>Edit</button>
